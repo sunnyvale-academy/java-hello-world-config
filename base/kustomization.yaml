@@ -1,0 +1,7 @@
+commonLabels:
+  app: java-hello-world
+
+resources:
+- deployment.yaml
+- service.yaml
+- configmap.yaml

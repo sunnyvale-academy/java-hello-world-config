@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: java-hello-world
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: java-hello-world
+  template:
+    spec:
+      containers:
+      - image: dennydgl1/java-hello-world:latest
+        imagePullPolicy: IfNotPresent
+        name: java-hello-world
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        readinessProbe:
+          httpGet:
+            path: /health/ready
+            port: 8080
+        livenessProbe:
+          httpGet:
+            path: /health/live
+            port: 8080
+        env:
+        - name: ENVIRONMENT
+          valueFrom:
+            configMapKeyRef:
+              key: environment
+              name: java-hello-world-cm
