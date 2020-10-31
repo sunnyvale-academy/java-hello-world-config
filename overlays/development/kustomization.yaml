@@ -3,10 +3,13 @@ commonLabels:
   variant: development
 commonAnnotations:
   note: Hello, I am running in development environment!
+namespace: development
 bases:
 - ../../base
 patchesStrategicMerge:
 - deployment-patch.yaml
+resources:
+- namespace.yaml
 images:
 - name: dennydgl1/java-hello-world
   newName: dennydgl1/java-hello-world
