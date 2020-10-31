@@ -1,0 +1,18 @@
+namePrefix: development-
+commonLabels:
+  variant: development
+commonAnnotations:
+  note: Hello, I am running in development environment!
+bases:
+- ../../base
+patchesStrategicMerge:
+- deployment-patch.yaml
+images:
+- name: dennydgl1/java-hello-world
+  newName: java-hello-world
+  newTag: "1.16"
+configMapGenerator:
+ - behavior: merge
+   name: java-hello-world-cm
+   envs: 
+    - env.properties
