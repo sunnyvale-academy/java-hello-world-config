@@ -4,4 +4,3 @@ metadata:
   name: java-hello-world-cm
 data:
   environment: local
-  greeting: Hello

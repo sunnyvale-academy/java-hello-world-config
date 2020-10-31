@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - image: dennydgl1/java-hello-world:latest
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
         name: java-hello-world
         ports:
         - containerPort: 8080
@@ -30,8 +30,17 @@ spec:
             configMapKeyRef:
               key: environment
               name: java-hello-world-cm
-        - name: VERSION
-          valueFrom:
-            configMapKeyRef:
-              key: version
-              name: java-hello-world-cm
+        volumeMounts:
+        - mountPath: /libs/application.yaml
+          readOnly: true
+          name: app-conf
+          subPath: application.yaml
+      volumes:
+       - name: app-conf
+         configMap:
+            name: java-hello-world-cm 
+            items:
+              - key: application.yaml
+                path: application.yaml
+
+
