@@ -7,7 +7,6 @@ spec:
   - port: 8080
     protocol: TCP
     targetPort: 8080
-    #nodePort: 32453
   selector:
     app: java-hello-world
-  type: NodePort
+  type: ClusterIP

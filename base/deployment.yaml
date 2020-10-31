@@ -30,3 +30,8 @@ spec:
             configMapKeyRef:
               key: environment
               name: java-hello-world-cm
+        - name: VERSION
+          valueFrom:
+            configMapKeyRef:
+              key: version
+              name: java-hello-world-cm
