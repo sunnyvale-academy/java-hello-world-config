@@ -2,7 +2,28 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: ingress
+  namespace: default
 spec:
-  backend:
-    serviceName: java-hello-world-svc
-    servicePort: 8080
+  rules:
+  - host: development.app.127-0-0-1.nip.io  
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: development-java-hello-world-svc
+          servicePort: 8080
+  - host: staging.app.127-0-0-1.nip.io  
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: staging-java-hello-world-svc
+          servicePort: 8080
+  - host: production.app.127-0-0-1.nip.io  
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: production-java-hello-world-svc
+          servicePort: 8080
+      
