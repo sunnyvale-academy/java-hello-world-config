@@ -13,7 +13,7 @@ resources:
 images:
 - name: dennydgl1/java-hello-world
   newName: dennydgl1/java-hello-world
-  newTag: "2.0"
+  newTag: "3.0"
 configMapGenerator:
  - behavior: merge
    name: java-hello-world-cm
