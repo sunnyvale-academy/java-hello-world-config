@@ -1,9 +1,9 @@
-namePrefix: development-
+namePrefix: production-
 commonLabels:
-  variant: development
+  variant: production
 commonAnnotations:
-  note: Hello, I am running in development environment!
-namespace: development
+  note: Hello, I am running in production environment!
+namespace: production
 bases:
 - ../../base
 patchesStrategicMerge:
