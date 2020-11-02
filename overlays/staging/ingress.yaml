@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress
+spec:
+  rules:
+  - host: staging.app.127-0-0-1.nip.io  
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: staging-java-hello-world-svc
+          servicePort: 8080
+  
+      
