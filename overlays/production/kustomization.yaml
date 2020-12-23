@@ -1,15 +1,14 @@
-namePrefix: development-
+namePrefix: production-
 commonLabels:
-  variant: development
+  variant: production
 commonAnnotations:
-  note: Hello, I am running in development environment!
-namespace: development
+  note: Hello, I am running in production environment!
+namespace: production
 bases:
 - ../../base
 patchesStrategicMerge:
 - deployment-patch.yaml
 resources:
-- namespace.yaml
 - ingress.yaml
 images:
 - name: dennydgl1/java-hello-world
