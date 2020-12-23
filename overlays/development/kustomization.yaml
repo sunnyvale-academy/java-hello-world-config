@@ -9,7 +9,6 @@ bases:
 patchesStrategicMerge:
 - deployment-patch.yaml
 resources:
-- namespace.yaml
 - ingress.yaml
 images:
 - name: dennydgl1/java-hello-world
