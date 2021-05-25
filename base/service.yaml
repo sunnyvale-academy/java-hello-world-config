@@ -4,9 +4,9 @@ metadata:
   name: java-hello-world-svc
 spec:
   ports:
-  - port: 8080
+  - port: 8102
     protocol: TCP
-    targetPort: 8080
+    targetPort: 8102
   selector:
     app: java-hello-world
   type: ClusterIP

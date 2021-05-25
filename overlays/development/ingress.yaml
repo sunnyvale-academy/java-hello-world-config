@@ -10,6 +10,6 @@ spec:
       - path: /
         backend:
           serviceName: development-java-hello-world-svc
-          servicePort: 8080
+          servicePort: 8102
   
       

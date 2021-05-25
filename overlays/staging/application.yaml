@@ -1,5 +1,5 @@
 app:
   greeting: "Hi"
 server:
-  port: 8080
+  port: 8102
   host: 0.0.0.0
