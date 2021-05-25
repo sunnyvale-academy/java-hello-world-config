@@ -14,16 +14,16 @@ spec:
         imagePullPolicy: Always
         name: java-hello-world
         ports:
-        - containerPort: 8080
+        - containerPort: 8102
           protocol: TCP
         readinessProbe:
           httpGet:
             path: /health/ready
-            port: 8080
+            port: 8102
         livenessProbe:
           httpGet:
             path: /health/live
-            port: 8080
+            port: 8102
         env:
         - name: ENVIRONMENT
           valueFrom:
